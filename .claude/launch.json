@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "si-prep",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8317", "--directory", "app"],
+      "port": 8317
+    }
+  ]
+}
