@@ -800,4 +800,559 @@ window.LESSONS.push({
   ]
 });
 
+window.LESSONS.push({
+  id: "ga-culture-heritage", sec: "B", title: "Culture: India + J&K heritage map", drill: "culture",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Culture questions = People + Place + Practice</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Every fact links a festival/dance/craft to WHERE it belongs</text>`),
+      text: "Culture questions almost always test one link: which festival, dance, craft, or shrine belongs to which region or community." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">J&K specific anchors</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Dances: Rouf, Dumhal (Kashmir); Bhangra (Jammu)</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">Festivals: Baisakhi, Lohri, Navreh, Amarnath Yatra</text>
+      <text x="20" y="136" font-size="13" fill="var(--text)">Crafts: Pashmina, Papier-mâché, Kani shawl, Walnut wood carving</text>
+      <text x="20" y="164" font-size="13" fill="var(--text)">Shrines: Vaishno Devi, Hazratbal, Amarnath, Charar-e-Sharief</text>`),
+      text: "Build a fixed mental table of J&K's dances, festivals, crafts, and shrines — these repeat across papers almost every year." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">All-India anchors</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Classical dances: Bharatanatyam(TN), Kathak(N.India), Odissi(Odisha)</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">UNESCO tags: identify recently added Intangible Heritage items</text>
+      <text x="20" y="136" font-size="13" fill="var(--text)">Instruments: Sitar, Santoor (Kashmiri classical), Shehnai</text>`),
+      text: "For all-India culture, pair each classical dance with its home state — this one-to-one mapping covers most repeated questions." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Common trap</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Similar-sounding crafts get swapped: Pashmina (wool shawl)</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">vs Kani (woven shawl) vs Papier-mâché (painted craft, not woven)</text>`),
+      text: "The exam loves swapping two similar J&K crafts as wrong options — always re-check whether the item is woven, carved, or painted before answering." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">When unsure, eliminate options clearly tied to a DIFFERENT state first —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">culture questions rarely have two correct-looking options from the same region.</text>`),
+      text: "If two options belong to the same state/region, one of them is usually a distractor — narrow down by region first, then by the specific item." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "ga-economics-policy", sec: "B", title: "Economics & Policy: the schemes-and-terms map", drill: "economics",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Two question types only</text>
+      <text x="200" y="100" text-anchor="middle" font-size="13" fill="var(--muted)">1) Term definitions   2) Government scheme facts</text>`),
+      text: "Economics & Policy questions split into two buckets: basic economic terms (GDP, inflation, fiscal deficit) and government scheme details (name, year, ministry, purpose)." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Core terms to fix cold</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">GDP = total value of goods/services produced in a year</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">Inflation = general rise in prices (measured by CPI/WPI)</text>
+      <text x="20" y="136" font-size="13" fill="var(--text)">Fiscal deficit = govt spending − govt revenue (excl. borrowings)</text>
+      <text x="20" y="164" font-size="13" fill="var(--text)">Repo rate = rate at which RBI lends to banks</text>`),
+      text: "Memorise one-line definitions for these four terms — they are recycled across nearly every GA paper in some form." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Scheme flashcard format</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Scheme name → Launch year → Ministry → One-line purpose</text>
+      <text x="20" y="115" font-size="13" fill="var(--text)">e.g. PM-KISAN → 2019 → Agriculture → ₹6000/yr income support to farmers</text>`),
+      text: "For every scheme you read, force it into this 4-field flashcard — name, year, ministry, purpose. Half-remembered schemes cause most wrong answers." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">J&K-specific economic facts</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Key sectors: horticulture (apples/saffron), tourism, handicrafts</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">UT-specific schemes: J&K industrial policy, Back to Village, UMEED</text>`),
+      text: "J&K's economy questions usually center on horticulture, tourism, and locally launched UT schemes — keep a short separate list for these." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Options often swap the YEAR or the MINISTRY of a real scheme —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">verify both fields, not just whether the scheme name sounds right.</text>`),
+      text: "Never trust a familiar-sounding scheme name alone — the trap option usually keeps the name correct but changes the year or ministry." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "ga-sports-tournaments", sec: "B", title: "Sports: tournaments, awards & J&K sportspersons", drill: "sports",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Three buckets to prepare</text>
+      <text x="20" y="100" font-size="13" fill="var(--text)">1. Major tournaments (venue/host, winner)</text>
+      <text x="20" y="128" font-size="13" fill="var(--text)">2. National sports awards</text>
+      <text x="20" y="156" font-size="13" fill="var(--text)">3. J&K sportspersons and their sport/achievement</text>`),
+      text: "Sports questions cover three separate buckets — split your revision into these three lists rather than reading news randomly." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Awards ladder (highest to lowest)</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Major Dhyan Chand Khel Ratna → highest sporting honour</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">Arjuna Award → outstanding performance</text>
+      <text x="20" y="136" font-size="13" fill="var(--text)">Dronacharya Award → for COACHES, not players</text>`),
+      text: "Remember the award ladder by rank AND by whom it honours — Dronacharya is the one trap that's for coaches, not athletes." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">J&K sportspersons anchor list</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Track these by name → sport → key achievement</text>
+      <text x="20" y="115" font-size="13" fill="var(--muted)">e.g. cricketers, footballers, and winter-sports athletes from J&K</text>`),
+      text: "Keep a running list of J&K-origin sportspersons with their sport and one headline achievement — these are asked far more often than generic national sports facts." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Tournament host-vs-winner trap</text>
+      <text x="20" y="85" font-size="13" fill="var(--text)">Host country ≠ winning team — the exam frequently</text>
+      <text x="20" y="113" font-size="13" fill="var(--text)">swaps these two in wrong options for the same event.</text>`),
+      text: "For any tournament question, separately confirm the HOST and the WINNER — they are two different facts and the trap option usually swaps them." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Update your list every few months — sports facts (rankings,</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">latest winners) go stale faster than history/polity facts.</text>`),
+      text: "Sports is the most time-sensitive GA topic — revise your anchor list closer to the exam date rather than memorising it early and forgetting to refresh." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "ga-science-research", sec: "B", title: "Science & Research: general science + Indian bodies", drill: "science",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Two layers of Science GA</text>
+      <text x="20" y="100" font-size="13" fill="var(--text)">1. School-level general science facts (physics/chem/bio basics)</text>
+      <text x="20" y="128" font-size="13" fill="var(--text)">2. Indian research bodies and their recent missions/work</text>`),
+      text: "Science & Research questions test basic general science AND awareness of Indian scientific institutions — prepare them as two separate short lists." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Institution → domain map</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">ISRO → space missions (satellites, Chandrayaan, Gaganyaan)</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">DRDO → defence research and missile systems</text>
+      <text x="20" y="136" font-size="13" fill="var(--text)">CSIR / ICMR → industrial research / medical research</text>`),
+      text: "Fix each Indian research body to its ONE domain — ISRO for space, DRDO for defence, ICMR for medicine — mixing these up is the most common wrong answer." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">General science quick facts</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Vitamin deficiency diseases (e.g. Vit C → scurvy, Vit D → rickets)</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">SI units of common quantities (force=Newton, power=Watt)</text>
+      <text x="20" y="136" font-size="13" fill="var(--text)">Human body basics: largest organ (skin), blood groups</text>`),
+      text: "General science questions repeat from a small pool — vitamins/deficiency diseases, SI units, and basic human-body facts cover most of them." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Recent-mission trap</text>
+      <text x="20" y="85" font-size="13" fill="var(--text)">Mission NAMES get swapped between ISRO missions —</text>
+      <text x="20" y="113" font-size="13" fill="var(--text)">always match mission name to its correct YEAR and PURPOSE.</text>`),
+      text: "When a question names an ISRO/DRDO mission, verify both its purpose and its approximate year — similar-sounding mission names are a frequent trap." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">If an option names an institution outside its known domain</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">(e.g. ISRO doing medical research), eliminate it immediately.</text>`),
+      text: "An institution acting outside its known domain is almost always the wrong option — use the domain map as your first filter." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "ga-people-in-news", sec: "B", title: "People in News: role-first memory method", drill: "people",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Name alone is useless — anchor to ROLE + EVENT</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Who + What position/achievement + When (roughly)</text>`),
+      text: "'People in News' questions test a person's current designation or a headline achievement — never memorise a name alone, always attach it to a role and event." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Priority categories</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">1. Top constitutional posts (President, CJI, CEC, CAG)</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">2. J&K administrative heads (LG, DGP, Chief Secretary)</text>
+      <text x="20" y="136" font-size="13" fill="var(--text)">3. Recently appointed heads of major bodies (RBI, ISRO, Army)</text>`),
+      text: "Focus your limited time on these three categories first — they are asked far more often than sportspersons or authors in this section." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">One-line flashcard format</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">[Name] — [Current post/title] — [since/appointed year]</text>
+      <text x="20" y="115" font-size="13" fill="var(--muted)">e.g. keep a running notebook, update it monthly</text>`),
+      text: "Write every new name as one flashcard line: name, post, year — this format is far easier to recall under exam pressure than a paragraph of news." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">The 'previous holder' trap</text>
+      <text x="20" y="85" font-size="13" fill="var(--text)">Options often list the PREVIOUS post-holder as a distractor —</text>
+      <text x="20" y="113" font-size="13" fill="var(--text)">always confirm you have the CURRENT (or as-of-exam-date) holder.</text>`),
+      text: "The most common trap lists the immediately previous person in that post — make sure your flashcard has the latest holder, not last year's." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Revise this list LAST, closest to the exam date —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">appointments change more often than any other GA sub-topic.</text>`),
+      text: "Keep People in News as your final revision topic before the exam since it goes stale the fastest of all GA sub-topics." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "ga-current-affairs-method", sec: "B", title: "Current Affairs: how to study a moving target", drill: "current",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">This topic has no fixed facts to memorise</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">The SKILL is what matters — how you track and revise it</text>`),
+      text: "Current Affairs 2025-26 changes every week, so this lesson teaches a METHOD for studying it, not a list of facts that would be outdated by exam day." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Step 1: pick ONE reliable monthly source</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">A single monthly current-affairs digest/PDF beats</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">scattered daily scrolling — consistency matters more than volume.</text>`),
+      text: "Choose one trusted monthly compilation and stick to it — jumping between many sources wastes time and causes conflicting half-memories." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Step 2: sort every item into a fixed bucket</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Appointments · Schemes · Awards · Sports · Defence ·</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">Reports/Rankings · J&K-specific news</text>`),
+      text: "As you read news, immediately file each fact into one of these fixed buckets — this mirrors how the exam itself categorises questions, making recall faster." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Step 3: weekly 10-minute re-read, not new reading</text>
+      <text x="20" y="85" font-size="13" fill="var(--text)">Spend most sessions RE-READING last month's notes,</text>
+      <text x="20" y="113" font-size="13" fill="var(--text)">not just adding new items — repetition beats coverage.</text>`),
+      text: "Revisit older notes weekly instead of only chasing new headlines — questions often come from events 2-4 months old, not yesterday's news." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">In the exam hall, if an option contradicts what J&K/national</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">policy generally does, eliminate it even without exact recall.</text>`),
+      text: "When you can't recall the exact fact, use elimination — an option that contradicts the general direction of known policy is usually the wrong one." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "quant-ratio-proportion", sec: "C", title: "Ratio & Proportion: keep the parts, scale together", drill: "ratio",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="17" fill="var(--text)">A : B = 2 : 3</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Means: for every 2 parts of A, there are 3 parts of B</text>`),
+      text: "A ratio just compares two quantities in fixed PARTS — 2:3 means whatever the total, A always gets 2 shares for every 3 shares B gets." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="16" fill="var(--text)">Total = 50, A : B = 2 : 3</text>
+      <text x="200" y="95" text-anchor="middle" font-size="15" fill="var(--ink)">Total parts = 2 + 3 = 5 → each part = 50/5 = 10</text>
+      <text x="200" y="135" text-anchor="middle" font-size="17" fill="var(--key)" font-weight="700">A = 20, B = 30</text>`),
+      text: "To split any total in a given ratio: add the parts to get total parts, divide the total by that to find the value of 1 part, then multiply back." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Combining two ratios (A:B and B:C)</text>
+      <text x="30" y="85" font-size="14" fill="var(--text)">A:B = 2:3   B:C = 4:5</text>
+      <text x="30" y="120" font-size="14" fill="var(--key)">Make B common (LCM of 3,4 = 12) → A:B = 8:12, B:C = 12:15</text>
+      <text x="30" y="150" font-size="16" fill="var(--key)" font-weight="700">A : B : C = 8 : 12 : 15</text>`),
+      text: "To chain three-way ratios, make the shared term (B here) equal by scaling both ratios to the LCM of its two given values." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Proportion rule: cross-multiply</text>
+      <text x="30" y="90" font-size="16" fill="var(--ink)">a/b = c/d  ⟺  a×d = b×c</text>`),
+      text: "A proportion (two equal ratios) can always be solved by cross-multiplication — this turns a fraction equation into a simple linear one." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Never add/subtract the SAME number to both parts of a ratio</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">and expect the ratio to stay the same — it changes unless it's 1:1.</text>`),
+      text: "A classic trap: adding or removing an equal amount from both quantities changes the ratio — only multiplying/dividing both parts by the same number preserves it." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "quant-square-roots-fast", sec: "C", title: "Square Roots: fast estimation without long division", drill: "sqroots",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Memorise squares 1² to 25² first</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">This single table makes root-finding almost instant</text>`),
+      text: "Before any trick works, memorise the squares of 1 to 25 — most exam roots fall in this range, and recognising them on sight saves the most time." },
+    { svg: svgWrap(`<text x="200" y="45" text-anchor="middle" font-size="15" fill="var(--text)">Find √576</text>
+      <text x="60" y="90" font-size="14" fill="var(--ink)">Last digit 6 → root ends in 4 or 6</text>
+      <text x="60" y="125" font-size="14" fill="var(--chinar)">576 is between 20²=400 and 30²=900, closer to 24²=576</text>
+      <text x="60" y="160" font-size="16" fill="var(--key)" font-weight="700">√576 = 24</text>`),
+      text: "Use the last-digit trick: a perfect square ending in 6 has a root ending in 4 or 6 — combine this with bracketing between known tens to narrow it down fast." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Last-digit → possible root endings</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Square ends in 1 → root ends in 1 or 9</text>
+      <text x="20" y="105" font-size="13" fill="var(--text)">Square ends in 4 → root ends in 2 or 8</text>
+      <text x="20" y="130" font-size="13" fill="var(--text)">Square ends in 9 → root ends in 3 or 7</text>
+      <text x="20" y="155" font-size="13" fill="var(--text)">Square ends in 5,0 → root ends in 5,0 respectively</text>`),
+      text: "This last-digit table instantly cuts your guesswork in half for any perfect square — pair it with tens-bracketing to nail the exact root in seconds." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Non-perfect squares: division method shortcut</text>
+      <text x="30" y="85" font-size="14" fill="var(--ink)">√50 ≈ ? → 7²=49, 8²=64, so √50 is just above 7</text>
+      <text x="30" y="120" font-size="14" fill="var(--key)">Refine: 50-49=1, extra ≈ 1/(2×7) = 0.07 → √50 ≈ 7.07</text>`),
+      text: "For non-perfect squares, bracket between two known squares, then refine using extra ≈ (difference)/(2 × lower root) — good enough for MCQ-level accuracy." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Check the LAST DIGIT of the options against your answer FIRST —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">it eliminates half the wrong options before you finish calculating.</text>`),
+      text: "In MCQ square-root questions, matching just the last digit of your answer against the options often eliminates 2 of 4 choices instantly." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "quant-averages-core", sec: "C", title: "Averages: the balance-point idea", drill: "averages",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="17" fill="var(--text)">Average = Sum of values ÷ Number of values</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Think of it as the 'balance point' of all the numbers</text>`),
+      text: "An average is the single number that balances a set — if you replaced every value with the average, the total would stay exactly the same." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="16" fill="var(--text)">5 numbers, average = 20 → total = 100</text>
+      <text x="200" y="100" text-anchor="middle" font-size="16" fill="var(--ink)">6th number added, new average = 22</text>
+      <text x="200" y="140" text-anchor="middle" font-size="17" fill="var(--key)" font-weight="700">New total = 22×6=132 → 6th number = 132−100 = 32</text>`),
+      text: "The core technique: convert average → total using (average × count), do the arithmetic on TOTALS, then convert back to average only at the end." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Deviation shortcut (mental math)</text>
+      <text x="30" y="85" font-size="14" fill="var(--text)">Numbers: 48, 52, 55, 45 → guess average ≈ 50</text>
+      <text x="30" y="120" font-size="14" fill="var(--ink)">Deviations: -2, +2, +5, -5 → sum = 0</text>
+      <text x="30" y="150" font-size="16" fill="var(--key)" font-weight="700">Sum of deviations = 0 → true average = 50</text>`),
+      text: "Guess a round-number average, find each value's deviation from it, and average the deviations — add that correction to your guess for the exact answer instantly." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Weighted average trap</text>
+      <text x="30" y="85" font-size="14" fill="var(--text)">Two groups of DIFFERENT sizes — don't just average the two averages</text>
+      <text x="30" y="120" font-size="14" fill="var(--key)">Weighted avg = (n1×avg1 + n2×avg2) / (n1+n2)</text>`),
+      text: "When combining groups of different sizes, never simply average the two averages — weight each by its group size first, or you'll get the wrong answer." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">'Average age of a group' questions with people joining/leaving:</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">always work in TOTAL AGE, then divide by the new count at the end.</text>`),
+      text: "For age/replacement average problems, convert everything to total age first — dividing too early is the single biggest source of errors here." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "quant-partnership-shares", sec: "C", title: "Partnership: profit split by capital × time", drill: "partnership",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Profit share ∝ Capital invested × Time invested</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Not just capital alone — TIME matters equally</text>`),
+      text: "In a partnership, profit is never split by capital alone — each partner's share depends on their capital MULTIPLIED by how long that capital stayed invested." },
+    { svg: svgWrap(`<text x="200" y="45" text-anchor="middle" font-size="15" fill="var(--text)">A invests ₹4000 for 12 months, B invests ₹6000 for 8 months</text>
+      <text x="60" y="90" font-size="15" fill="var(--ink)">A's share unit = 4000×12 = 48,000</text>
+      <text x="60" y="120" font-size="15" fill="var(--chinar)">B's share unit = 6000×8 = 48,000</text>
+      <text x="60" y="155" font-size="17" fill="var(--key)" font-weight="700">Ratio A:B = 48,000:48,000 = 1:1 (equal share!)</text>`),
+      text: "Multiply each partner's capital by their invested time to get a 'capital-month' unit — the profit ratio is simply the ratio of these units, even if capitals looked unequal." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Partner joining late / leaving early</text>
+      <text x="30" y="85" font-size="14" fill="var(--text)">If total business runs 12 months but a partner joins in month 4,</text>
+      <text x="30" y="115" font-size="14" fill="var(--key)">that partner's TIME = 12 − 4 = 8 months only</text>`),
+      text: "Always compute each partner's ACTUAL months invested (not the full business duration) — a partner joining late gets fewer time-months in the ratio." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Working vs sleeping partner</text>
+      <text x="30" y="85" font-size="14" fill="var(--text)">If a 'working partner' gets a fixed extra commission/salary first,</text>
+      <text x="30" y="115" font-size="14" fill="var(--text)">deduct that from total profit BEFORE splitting the remainder by capital×time.</text>`),
+      text: "When a question mentions a working partner's salary or commission, subtract that fixed amount from total profit first — only the remaining profit is split by the capital×time ratio." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Never assume equal time for all partners just because the</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">question doesn't repeat it for each — re-read for join/exit months.</text>`),
+      text: "The most common trap is silently assuming everyone invested for the full period — always scan the question again for hidden 'joined later' or 'left early' clues." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "quant-mixture-alligation", sec: "C", title: "Mixture & Alligation: the criss-cross rule", drill: "mixture",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Mixing two things of different 'strength' or 'price'</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Alligation finds the RATIO to mix them in</text>`),
+      text: "Alligation answers one question type: two ingredients of different price/concentration are mixed to get a target average — in what ratio were they combined?" },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">The alligation cross</text>
+      <text x="70" y="80" font-size="16" fill="var(--ink)">Cheaper: 20</text>
+      <text x="280" y="80" font-size="16" fill="var(--chinar)">Dearer: 30</text>
+      <text x="175" y="130" font-size="18" fill="var(--key)" font-weight="700">Mean: 25</text>
+      <line x1="90" y1="90" x2="270" y2="120" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4"/>
+      <line x1="270" y1="90" x2="90" y2="120" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4"/>`),
+      text: "Draw the cross: cheaper value top-left, dearer value top-right, mean price in the middle — the two diagonal differences give the mixing ratio." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Reading off the ratio</text>
+      <text x="30" y="85" font-size="15" fill="var(--ink)">Dearer − Mean = 30 − 25 = 5  → cheaper's share</text>
+      <text x="30" y="120" font-size="15" fill="var(--chinar)">Mean − Cheaper = 25 − 20 = 5  → dearer's share</text>
+      <text x="30" y="155" font-size="17" fill="var(--key)" font-weight="700">Cheaper : Dearer = 5 : 5 = 1 : 1</text>`),
+      text: "The rule: cheaper's quantity ratio = (Dearer − Mean), and dearer's quantity ratio = (Mean − Cheaper) — cross the differences diagonally, never straight down." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Works for any 'mix two things' scenario</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Milk-water mixtures, two grades of rice/sugar,</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">alloys of two metals, average marks of two class sections.</text>`),
+      text: "Alligation isn't just for prices — it works for any 'blend two things to hit a target average' question, including milk-water and marks-of-two-sections problems." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">The mean value MUST lie between the two given values —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">if it doesn't, you've misread which is cheaper/dearer.</text>`),
+      text: "Sanity check every alligation answer: the target mean must sit strictly between the two input values — if your mean is outside that range, recheck which number is which." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "quant-time-speed-distance", sec: "C", title: "Time & Distance: speed, relative speed, trains & boats", drill: "tsd",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="17" fill="var(--text)" font-weight="700">Speed = Distance / Time</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Every question is this triangle in disguise</text>`),
+      text: "Every Time-Speed-Distance question is just this one relationship rearranged — write down which two of the three values you're given before solving." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Unit conversion — memorise this</text>
+      <text x="30" y="85" font-size="16" fill="var(--ink)">km/hr → m/s: multiply by 5/18</text>
+      <text x="30" y="120" font-size="16" fill="var(--ink)">m/s → km/hr: multiply by 18/5</text>`),
+      text: "Almost every TSD question needs this conversion at some point — memorise 5/18 and 18/5 so you never derive them under time pressure." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Relative speed rules</text>
+      <text x="20" y="80" font-size="14" fill="var(--text)">Same direction (chasing): relative speed = difference of speeds</text>
+      <text x="20" y="115" font-size="14" fill="var(--text)">Opposite direction (approaching): relative speed = sum of speeds</text>`),
+      text: "For two moving objects, ADD their speeds if moving towards each other, SUBTRACT if moving in the same direction — this single rule solves all overtaking/meeting problems." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Trains: use TOTAL length crossed</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Train crossing a pole: distance = train's own length</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">Train crossing a platform: distance = train length + platform length</text>
+      <text x="20" y="136" font-size="13" fill="var(--text)">Two trains crossing each other: distance = sum of both lengths</text>`),
+      text: "For train problems, the trap is always about WHAT distance to use — a pole needs only the train's length, but a platform or another train adds their lengths together." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Boats & streams shortcut</text>
+      <text x="20" y="80" font-size="14" fill="var(--text)">Downstream speed = Boat speed + Current speed</text>
+      <text x="20" y="110" font-size="14" fill="var(--text)">Upstream speed = Boat speed − Current speed</text>
+      <text x="20" y="145" font-size="13" fill="var(--muted)">Boat speed = (down+up)/2,  Current speed = (down−up)/2</text>`),
+      text: "Boats-and-streams is relative speed applied to water current — add current going downstream, subtract going upstream, and you can always recover both speeds from these two formulas." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "eng-grammar-structure", sec: "D", title: "Grammar & Structure: tenses and parts of speech basics", drill: "grammar",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">8 parts of speech, one job each</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Noun · Pronoun · Verb · Adjective · Adverb · Preposition · Conjunction · Interjection</text>`),
+      text: "Grammar questions test whether you can identify the correct part of speech and tense for a blank or an underlined word — start by naming what job each word does in the sentence." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">The tense grid (memorise this shape)</text>
+      <text x="20" y="75" font-size="13" fill="var(--text)">Present: I write / I am writing / I have written / I have been writing</text>
+      <text x="20" y="103" font-size="13" fill="var(--text)">Past: I wrote / I was writing / I had written / I had been writing</text>
+      <text x="20" y="131" font-size="13" fill="var(--text)">Future: I will write / I will be writing / I will have written</text>`),
+      text: "Every tense follows the same 4-column pattern (simple / continuous / perfect / perfect-continuous) across present, past, and future — learn the SHAPE, not each sentence separately." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Subject-verb agreement trap</text>
+      <text x="20" y="80" font-size="14" fill="var(--text)">"Each of the boys HAS (not have) a book" — 'each/every' → singular</text>
+      <text x="20" y="115" font-size="14" fill="var(--text)">"Neither of them WAS (not were) present" — 'neither/either' → singular</text>`),
+      text: "Words like each, every, neither, either always take a SINGULAR verb even when followed by a plural-looking phrase — this is one of the most repeated grammar traps." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Article trap (a/an/the)</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Use 'an' before a VOWEL SOUND, not vowel letter</text>
+      <text x="20" y="110" font-size="13" fill="var(--text)">"an hour" (silent h) but "a university" (sounds like 'yoo')</text>`),
+      text: "Article choice depends on the SOUND that follows, not the letter — 'an hour' and 'a university' both look like exceptions but follow this one sound-based rule." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Read the FULL sentence before choosing — grammar traps are</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">designed to look right if you only read up to the blank.</text>`),
+      text: "Never answer based on the words immediately before a blank — always read to the end of the sentence, since the subject or tense clue is often placed after it." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "eng-fill-blanks", sec: "D", title: "Fill in the Blanks: context-first strategy", drill: "blanks",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Read the WHOLE sentence first, blank last</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">The rest of the sentence tells you what KIND of word fits</text>`),
+      text: "Before looking at any option, read the complete sentence and predict what TYPE of word (verb/noun/preposition/connector) the blank needs — this narrows 4 options to 1-2 instantly." },
+    { svg: svgWrap(`<text x="200" y="45" text-anchor="middle" font-size="14" fill="var(--text)">"He succeeded ___ solving the puzzle."</text>
+      <text x="60" y="90" font-size="14" fill="var(--muted)">succeed IN (fixed preposition pairing)</text>
+      <text x="60" y="125" font-size="16" fill="var(--key)" font-weight="700">Answer: "in"</text>`),
+      text: "Many blanks test fixed verb-preposition pairs (succeed IN, depend ON, insist ON) — memorising these common pairings solves the blank without needing to think about meaning at all." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Connector blanks need logic, not vocabulary</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">"He studied hard, ___ he failed." → needs a CONTRAST word (yet/but)</text>
+      <text x="20" y="110" font-size="13" fill="var(--text)">"He studied hard, ___ he passed." → needs a RESULT word (so/hence)</text>`),
+      text: "For connector blanks (but/so/because/although), first decide the LOGICAL relationship between the two clauses — contrast, cause, or result — then pick the word that matches that logic." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Double-blank sentences</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Solve the EASIER blank first — it often restricts which</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">option pair remains valid for the harder blank.</text>`),
+      text: "When a sentence has two blanks, fill the one you're more confident about first — it usually eliminates 2-3 of the 4 paired options immediately." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Always re-read the completed sentence with your chosen option —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">if it sounds even slightly odd, re-check meaning, not just grammar.</text>`),
+      text: "After picking an answer, plug it back in and re-read the full sentence — a grammatically correct option can still be the wrong MEANING fit." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "eng-spelling-patterns", sec: "D", title: "Spellings: pattern-based memory tricks", drill: "spelling",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Most misspellings follow a handful of repeat patterns</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Learn the PATTERN, not each word in isolation</text>`),
+      text: "Spelling errors in this exam repeat the same handful of confusable patterns — group commonly misspelled words by pattern rather than memorising a random list." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">'i before e' family</text>
+      <text x="20" y="80" font-size="14" fill="var(--text)">believe, achieve, receive(exception: after 'c' use 'ei')</text>
+      <text x="20" y="110" font-size="13" fill="var(--muted)">Rule: i before e, except after c</text>`),
+      text: "The classic rule 'i before e, except after c' resolves believe/achieve vs receive/deceive — apply it whenever these two letters appear together." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Double-letter confusions</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">accommodate (2 c's, 2 m's), embarrass (2 r's, 2 s's)</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">necessary (1 c, 2 s's), occurred (2 c's, 2 r's)</text>`),
+      text: "Words with double letters are the most commonly tested — build a small personal list of exactly which letter doubles in each, since guessing here is a coin-flip." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Silent-letter words</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">psychology (silent p), foreign (silent g-sound irregularity)</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">Wednesday (silent d), knowledge (silent k)</text>`),
+      text: "Silent-letter words are commonly mis-typed because we don't pronounce the tricky letter — say the word slowly while spelling it out to catch the silent letter." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">When two options look almost identical, compare them</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">letter-by-letter rather than judging by 'how it looks overall'.</text>`),
+      text: "For near-identical spelling options, scan letter by letter rather than trusting the overall shape of the word — that's exactly where the exam hides the single wrong letter." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "eng-narration-speech", sec: "D", title: "Direct/Indirect Speech: the conversion checklist", drill: "narration",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="55" text-anchor="middle" font-size="15" fill="var(--text)">Direct: He said, "I am tired."</text>
+      <text x="200" y="100" text-anchor="middle" font-size="15" fill="var(--key)" font-weight="700">Indirect: He said (that) he was tired.</text>`),
+      text: "Converting direct to indirect speech means removing the quotation marks and adjusting THREE things: the reporting verb tense, the pronoun, and the tense inside the quote." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Tense shifts back ONE step (if reporting verb is past)</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">am/is/are → was/were</text>
+      <text x="20" y="105" font-size="13" fill="var(--text)">will → would   |   can → could   |   have → had</text>
+      <text x="20" y="130" font-size="13" fill="var(--text)">simple present → simple past   |   simple past → past perfect</text>`),
+      text: "If the reporting verb ('he said') is in the past, every tense inside the quote shifts back one step — memorise this backward-shift table so you never have to guess." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Pronoun swap rule</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">'I/we' → match the SUBJECT of the reporting verb</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">'you' → match the OBJECT of the reporting verb</text>`),
+      text: "Pronouns inside the quote change to match who is speaking about whom — 'I' becomes whoever the subject is, 'you' becomes whoever is being addressed (the object)." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Time/place word swaps</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">now → then   |   today → that day   |   here → there</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">tomorrow → the next day   |   yesterday → the previous day</text>`),
+      text: "Time and place references also shift away from the speaker's original moment — 'today' becomes 'that day', 'tomorrow' becomes 'the next day', and so on." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Questions/commands change structure too: "Did you go?" →</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">He asked if/whether he had gone. (no question mark, 'if/whether' added)</text>`),
+      text: "Interrogative and imperative sentences need an extra structural change beyond tense/pronoun — questions get 'if/whether' and lose their question mark, commands use 'to' + infinitive." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "eng-sentence-rearrangement", sec: "D", title: "Sentence Rearrangement: find the anchor sentence first", drill: "shuffling",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Don't read left-to-right — find the OPENING sentence first</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">The opener introduces the subject with no pronoun reference</text>`),
+      text: "In para-jumbles, first scan for the sentence that could logically OPEN the paragraph — it introduces a subject/topic by name, without relying on 'it/he/this' pointing to something earlier." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Pronoun-chain trick</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">A sentence starting with "This/It/He/They" must FOLLOW</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">the sentence that first names that noun — never come first.</text>`),
+      text: "Any sentence beginning with a pronoun (This, It, He, They) cannot be the opener — trace which earlier sentence introduces the noun that pronoun refers to, and link them." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Connector-word chain</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">"However/But" → needs a contrasting idea just before it</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">"Therefore/Thus" → needs a cause/reason just before it</text>`),
+      text: "Words like 'however', 'therefore', 'moreover' are glue between two specific sentences — find which sentence logically precedes each connector to lock two pieces together." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Build pairs before building the full order</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Lock 2-3 sentences into confirmed PAIRS first</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">(via pronoun/connector links), then slot the pairs into full order.</text>`),
+      text: "Don't try to solve the whole sequence at once — lock small confirmed pairs first using pronoun and connector clues, then arrange those pairs into the final order." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Once you have an order, read it top to bottom as one paragraph —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">if it doesn't flow naturally, your opener or a pair is wrong.</text>`),
+      text: "Always do a final read-through of your chosen order as a continuous paragraph — a natural flow confirms it, an awkward jump means you should re-check the pairing." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "eng-cloze-passage", sec: "D", title: "Cloze Passage: read once fully before filling any blank", drill: "cloze",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Read the ENTIRE passage first, blanks and all</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Get the overall theme before touching any single blank</text>`),
+      text: "A cloze passage has multiple blanks that all serve ONE overall theme — read through the whole passage once, ignoring the blanks, to understand what it's actually about." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Fill the 'obvious' blanks first</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Grammar-only blanks (prepositions, articles, tense) don't</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">need the full theme — solve these immediately on the first pass.</text>`),
+      text: "Some blanks only test grammar (a fixed preposition, an article) and can be filled without deep context — knock these out first to build confidence and save time." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Tone-matching for vocabulary blanks</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">A passage praising something won't suddenly use a</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">negative-tone word in the middle — match the passage's TONE.</text>`),
+      text: "For vocabulary-choice blanks, the correct word must match the overall TONE of the passage (positive/negative/neutral) — a tone-mismatched option is almost always wrong even if it 'fits' grammatically." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Use later sentences to solve earlier blanks</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">A clue for blank #2 often sits in sentence #4 —</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">don't assume each blank is solved only from its own sentence.</text>`),
+      text: "Clues for one blank are often placed in a LATER sentence, not the one containing the blank itself — if a blank feels unsolvable, keep reading forward before giving up on it." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">After filling all blanks, re-read the full passage once more —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">it should read smoothly as one coherent piece, not a patchwork.</text>`),
+      text: "Do one final full re-read with all your answers in place — if the passage now flows naturally end to end, your choices are consistent; any jarring blank needs a second look." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "eng-reading-comprehension", sec: "D", title: "Reading Comprehension: questions-first strategy", drill: "comprehension",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">Skim the QUESTIONS before reading the full passage</text>
+      <text x="200" y="105" text-anchor="middle" font-size="13" fill="var(--muted)">Know what you're hunting for before you start reading</text>`),
+      text: "Glance at the questions (not the options) BEFORE reading the passage in detail — this tells you which facts/names/numbers to watch for as you read, saving a second full read-through." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Answer from the passage, not from outside knowledge</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Even if you know more about the topic personally,</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">the correct answer must be traceable to a line IN the passage.</text>`),
+      text: "RC answers must come from what the passage actually states or implies — never let outside knowledge override what's written, since the exam only credits passage-based reasoning." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Two answer traps to avoid</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">1. Too extreme: passage says 'some', option says 'all'</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">2. Half-right: option matches one clause, contradicts another</text>`),
+      text: "Watch for options that overstate the passage (turning 'some' into 'all/always') or that are only half-correct — matching part of a sentence while contradicting the rest." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">'Main idea' vs 'detail' questions</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Main idea → look at the FIRST and LAST paragraph/sentence</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">Specific detail → scan for the exact keyword from the question</text>`),
+      text: "For 'main idea/title' questions, the opening and closing lines usually reveal it directly; for detail questions, scan for the exact keyword rather than re-reading the whole passage." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">If two options both seem partly supported, pick the one</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">that is fully and directly stated, not the one needing inference.</text>`),
+      text: "When torn between two plausible options, favour the one directly stated in the passage over one that requires you to infer or assume — RC rewards literal accuracy." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "math-statistics-probability", sec: "E", title: "Statistics & Probability: mean/median/mode + basic chance", drill: "statistics",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="55" text-anchor="middle" font-size="15" fill="var(--text)">Data: 3, 5, 5, 7, 9</text>
+      <text x="200" y="95" text-anchor="middle" font-size="14" fill="var(--ink)">Mean = sum/count = 29/5 = 5.8</text>
+      <text x="200" y="130" text-anchor="middle" font-size="14" fill="var(--chinar)">Median = middle value (sorted) = 5</text>
+      <text x="200" y="165" text-anchor="middle" font-size="14" fill="var(--key)" font-weight="700">Mode = most frequent value = 5</text>`),
+      text: "Mean is the arithmetic average; median is the middle value once the data is SORTED; mode is whichever value repeats most — always sort the data first before finding median or mode." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Median: odd vs even count</text>
+      <text x="20" y="80" font-size="13" fill="var(--text)">Odd count → median = the exact middle term</text>
+      <text x="20" y="108" font-size="13" fill="var(--text)">Even count → median = average of the two middle terms</text>`),
+      text: "The most common median mistake: with an EVEN number of values, there's no single middle term — you must average the two central values instead." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Probability = Favourable outcomes / Total outcomes</text>
+      <text x="20" y="85" font-size="14" fill="var(--ink)">P(rolling a 4 on a die) = 1/6</text>
+      <text x="20" y="115" font-size="14" fill="var(--ink)">P(drawing a red card from 52) = 26/52 = 1/2</text>`),
+      text: "Basic probability is always favourable-outcomes divided by total-outcomes — count both carefully, especially total outcomes, which is where most errors happen." },
+    { svg: svgWrap(`<text x="200" y="40" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Two events: AND vs OR</text>
+      <text x="20" y="85" font-size="14" fill="var(--text)">Both happen (AND, independent) → multiply probabilities</text>
+      <text x="20" y="115" font-size="14" fill="var(--text)">Either happens (OR, mutually exclusive) → add probabilities</text>`),
+      text: "For two events, multiply their probabilities for 'both happen' (AND), and add them for 'either happens' (OR) — mixing up AND/OR is the most common probability error." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Probability always lies between 0 and 1 —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">if your computed answer is negative or above 1, you miscounted outcomes.</text>`),
+      text: "Sanity-check every probability answer: it must fall between 0 and 1 inclusive — any value outside that range means a counting mistake, not a valid answer." }
+  ]
+});
+
+window.LESSONS.push({
+  id: "cs-windows-msoffice", sec: "F", title: "Windows & MS Office: the essentials map", drill: "software",
+  steps: [
+    { svg: svgWrap(`<text x="200" y="60" text-anchor="middle" font-size="16" fill="var(--text)" font-weight="700">One app, one job</text>
+      <text x="20" y="105" font-size="13" fill="var(--text)">Word → documents/letters   Excel → numbers/tables/formulas</text>
+      <text x="20" y="133" font-size="13" fill="var(--text)">PowerPoint → slide presentations   Windows OS → manages everything</text>`),
+      text: "Fix each MS Office app to ONE core job first — Word for text documents, Excel for numeric tables/calculations, PowerPoint for slide presentations — most questions just test this basic mapping." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Common Windows shortcuts</text>
+      <text x="20" y="75" font-size="13" fill="var(--text)">Ctrl+C copy · Ctrl+V paste · Ctrl+Z undo · Ctrl+S save</text>
+      <text x="20" y="100" font-size="13" fill="var(--text)">Alt+Tab switch windows · Ctrl+Alt+Del security screen</text>
+      <text x="20" y="125" font-size="13" fill="var(--text)">Windows+L lock screen · Windows+E open File Explorer</text>`),
+      text: "A fixed set of Windows keyboard shortcuts gets tested repeatedly — memorise this short list rather than trying to guess shortcut meaning from the key names." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Excel basics</text>
+      <text x="20" y="75" font-size="13" fill="var(--text)">Cell = intersection of a row (number) and column (letter), e.g. B5</text>
+      <text x="20" y="103" font-size="13" fill="var(--text)">=SUM(A1:A5) adds a range · =AVERAGE(A1:A5) finds the mean</text>
+      <text x="20" y="131" font-size="13" fill="var(--text)">Every formula STARTS with an '=' sign</text>`),
+      text: "In Excel, a cell is named by its column letter + row number (like B5), and every formula must begin with '=' — SUM and AVERAGE are the two most commonly tested functions." },
+    { svg: svgWrap(`<text x="200" y="35" text-anchor="middle" font-size="14" fill="var(--text)" font-weight="700">Word & PowerPoint basics</text>
+      <text x="20" y="75" font-size="13" fill="var(--text)">Word: Home tab has font/paragraph tools, Insert tab adds tables/images</text>
+      <text x="20" y="103" font-size="13" fill="var(--text)">PowerPoint: 'Slide Show' tab or F5 key runs the presentation</text>`),
+      text: "For Word, remember which RIBBON TAB holds which tool group (Home = formatting, Insert = objects); for PowerPoint, F5 (or the Slide Show tab) starts the presentation from the beginning." },
+    { svg: svgWrap(`<text x="200" y="50" text-anchor="middle" font-size="14" fill="var(--chinar)" font-weight="700">Exam rule of thumb</text>
+      <text x="20" y="95" font-size="13" fill="var(--text)">Don't confuse similar-looking shortcuts across apps —</text>
+      <text x="20" y="123" font-size="13" fill="var(--text)">F5 refreshes in a browser/Excel but STARTS the show in PowerPoint.</text>`),
+      text: "The same key can do different things in different applications (F5 refreshes in Excel but launches the slideshow in PowerPoint) — always anchor a shortcut to its specific app, not as a universal rule." }
+  ]
+});
+
 console.log("Lessons loaded:", window.LESSONS.length);
