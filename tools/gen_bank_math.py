@@ -30,10 +30,45 @@ def opts_from(correct, distractors, fmt=str):
 Q = []   # section C
 M = []   # section E
 
-def add(store, sec, topic, diff, q, correct, distractors, exp, fmt=str, tags=None):
+def add(store, sec, topic, diff, q, correct, distractors, exp, fmt=str, tags=None, real=False):
     opts, ans = opts_from(correct, distractors, fmt)
-    store.append({"sec": sec, "topic": topic, "diff": diff, "q": q,
-                  "opts": opts, "ans": ans, "exp": exp, "tags": tags or [topic]})
+    row = {"sec": sec, "topic": topic, "diff": diff, "q": q,
+           "opts": opts, "ans": ans, "exp": exp, "tags": tags or [topic]}
+    if real:
+        row["real"] = True
+    store.append(row)
+
+# ===================================================== verified real 2022 JKSSB SI paper (Quant)
+add(Q, "C", "profit", 2,
+    "Mohan gets a 5% discount on an article and thereby saves Rs 30. How much does he pay for it?",
+    570, [560, 580, 550],
+    "5% discount = Rs 30, so full price = 30 / 0.05 = Rs 600. Amount paid = 600 − 30 = Rs 570.",
+    real=True)
+add(Q, "C", "ratio", 2,
+    "Which number bears the same ratio to 7/43 that 9/22 bears to 5/11?",
+    "63/430", ["61/430", "63/431", "61/431"],
+    "Let the number be x. x ÷ (7/43) = (9/22) ÷ (5/11) = (9/22)×(11/5) = 9/10. So x = (7/43)×(9/10) = 63/430.",
+    real=True)
+add(Q, "C", "percentage", 2,
+    "If Rs 306 is 5/9% of the price of a sofa, find the price of the sofa.",
+    55080, [64560, 5580, 75840],
+    "5/9% = 5/900 as a fraction. Price = 306 ÷ (5/900) = 306 × 900/5 = Rs 55,080.",
+    real=True)
+add(Q, "C", "ratio", 2,
+    "If x : y = 1 : 3, find the ratio (7x² + 3xy) : (2xy + y²).",
+    "16:15", ["10:3", "16:5", "16:7"],
+    "Put x=1, y=3. Numerator = 7(1)+3(1×3) = 7+9 = 16. Denominator = 2(1×3)+9 = 6+9 = 15. Ratio = 16:15.",
+    real=True)
+add(Q, "C", "averages", 2,
+    "The average weight of 25 kids in a class is 24 kg. When a teacher's weight is added, the average rises by 2 kg. Find the teacher's weight.",
+    76, [50, 75, 84],
+    "Old total = 25×24 = 600. New average = 26, new count = 26, new total = 26×26 = 676. Teacher's weight = 676 − 600 = 76 kg.",
+    real=True)
+add(Q, "C", "tsd", 1,
+    "Rohit leaves home at 5:40 pm. He takes 30 minutes to reach the station, 10 minutes for breakfast there, and then 40 minutes to reach office. At what time does he reach office?",
+    "7:00 pm", ["6:50 pm", "7:10 pm", "7:20 pm"],
+    "Total time = 30 + 10 + 40 = 80 minutes = 1 hr 20 min. 5:40 pm + 1:20 = 7:00 pm.",
+    real=True)
 
 # ============================================================ QUANT (C)
 def gen_percentage(n):
@@ -350,9 +385,9 @@ def gen_mixture(n):
                 f"Milk = {mm} L stays; water becomes {ww}+{addw} = {ww+addw} L. Ratio = {mm}:{ww+addw} = {mm//g}:{(ww+addw)//g}.", str)
 
 QUANT_PLAN = [
-    (gen_percentage, 33), (gen_ratio, 32), (gen_averages, 30), (gen_interest, 30),
-    (gen_profit, 32), (gen_work, 28), (gen_tsd, 30), (gen_numbers, 30),
-    (gen_sqroots, 25), (gen_partnership, 15), (gen_mixture, 15),
+    (gen_percentage, 50), (gen_ratio, 48), (gen_averages, 45), (gen_interest, 45),
+    (gen_profit, 48), (gen_work, 42), (gen_tsd, 45), (gen_numbers, 45),
+    (gen_sqroots, 38), (gen_partnership, 23), (gen_mixture, 23),
 ]
 
 # ============================================================ MATH (E)
@@ -610,8 +645,8 @@ def gen_statistics(n):
                     f"P(red) = favourable/total = {r_}/{tot}" + (f" = {r_//g}/{tot//g}" if g > 1 else "") + ".", str)
 
 MATH_PLAN = [
-    (gen_algebra, 60), (gen_geometry, 60), (gen_mensuration, 62),
-    (gen_trigonometry, 58), (gen_statistics, 60),
+    (gen_algebra, 90), (gen_geometry, 90), (gen_mensuration, 93),
+    (gen_trigonometry, 87), (gen_statistics, 90),
 ]
 
 # ============================================================ run
@@ -623,20 +658,32 @@ def run(plan, store, want):
     for q in store:
         if q["q"] not in seen:
             seen.add(q["q"]); out.append(q)
-    # top up if dedupe removed some
+    # top up if dedupe removed some — capped per topic so a high-diversity
+    # generator (e.g. statistics) can't crowd out low-diversity ones
+    from collections import Counter
+    topic_count = Counter(q["topic"] for q in out)
+    # statistics has a much larger combinatorial space than the other Math
+    # topics (mean/median over near-unlimited number sets) — cap it tighter
+    # so it can't crowd out low-diversity topics like algebra/mensuration.
+    topic_cap = {fn.__name__[4:]: (int(cnt * 1.4) if fn.__name__[4:] == "statistics" else cnt * 2) for fn, cnt in plan}
     guard = 0
-    while len(out) < want and guard < 3000:
+    while len(out) < want and guard < 4000:
         fn, _ = rng.choice(plan)
+        topic = fn.__name__[4:]
+        if topic_count.get(topic, 0) >= topic_cap.get(topic, 10**9):
+            guard += 1
+            continue
         before = len(store)
         fn(1)
         for q in store[before:]:
             if q["q"] not in seen:
                 seen.add(q["q"]); out.append(q)
+                topic_count[q["topic"]] = topic_count.get(q["topic"], 0) + 1
         guard += 1
     return out[:want]
 
-quant = run(QUANT_PLAN, Q, 300)
-mathq = run(MATH_PLAN, M, 300)
+quant = run(QUANT_PLAN, Q, 450)
+mathq = run(MATH_PLAN, M, 450)
 
 def write_bank(rows, prefix, fname, label):
     for i, q in enumerate(rows):

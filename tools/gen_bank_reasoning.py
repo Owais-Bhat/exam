@@ -19,10 +19,51 @@ def opts_from(correct, distractors, fmt=str):
     rng.shuffle(opts)
     return opts, opts.index(fmt(correct))
 
-def add(topic, diff, q, correct, distractors, exp, tags=None):
+def add(topic, diff, q, correct, distractors, exp, tags=None, real=False):
     opts, ans = opts_from(correct, distractors)
-    R.append({"sec": "A", "topic": topic, "diff": diff, "q": q,
-              "opts": opts, "ans": ans, "exp": exp, "tags": tags or [topic]})
+    row = {"sec": "A", "topic": topic, "diff": diff, "q": q,
+           "opts": opts, "ans": ans, "exp": exp, "tags": tags or [topic]}
+    if real:
+        row["real"] = True
+    R.append(row)
+
+# ===================================================== verified real 2022 JKSSB SI paper (Reasoning)
+add("coding", 2,
+    "In a certain code, '731' means 'study very hard', '953' means 'hard work pays', and '145' means 'study and work'. What is the code for 'very'?",
+    "7", ["1", "4", "9"],
+    "Find the word common to two messages, then the digit common to their codes. 'hard' is common to msg1 & msg2 → common digit 3 → 3=hard. 'study' is common to msg1 & msg3 → common digit 1 → 1=study. In msg1 (7,3,1 = study,very,hard), 3=hard and 1=study are used, so the remaining digit 7 must be 'very'.",
+    real=True)
+add("coding", 3,
+    "If LETTER string CZNVRSWFD maps position-by-position to CODE DIGIT string 864729351, what is the code for WNCSZV?",
+    "348967", ["348267", "318267", "348957"],
+    "Map each letter to the digit in the same position: C=8, Z=6, N=4, V=7, R=2, S=9, W=3, F=5, D=1. Now encode W-N-C-S-Z-V letter by letter: 3-4-8-9-6-7 = 348967.",
+    real=True)
+add("space", 2,
+    "Hitesh walks straight, takes a left turn, a right turn, then another left turn, and is now facing North. Which direction was he facing initially?",
+    "East", ["West", "North", "South"],
+    "Track each 90° turn from the final direction backwards. Left+Right cancel out, leaving a net single left turn from start to finish. So start = North rotated 90° clockwise (undoing one left turn) = East.",
+    real=True)
+add("space", 2,
+    "A man is facing West. He turns 135° clockwise, then 45° anti-clockwise. Which direction is he facing now?",
+    "North", ["South", "North-East", "South-West"],
+    "Using bearings (N=0°, E=90°, S=180°, W=270°, clockwise positive): start at West=270°. +135° clockwise = 405°=45° (North-East). −45° anti-clockwise = 0° = North.",
+    real=True)
+add("analogies", 2,
+    "345 : 12 :: 179 : ?",
+    "17", ["14", "15", "16"],
+    "The rule is: sum the digits of the first number to get the second. 3+4+5 = 12. Applying the same rule: 1+7+9 = 17.",
+    real=True)
+add("inference", 2,
+    "Statements: All lions are cats. All cats are hunters. Conclusions: I. All hunters are lions. II. Some hunters are lions. III. All lions are hunters. Which conclusions follow?",
+    "Both II and III follow", ["Only I follows", "Only III follows", "None follow"],
+    "Lions ⊆ Cats ⊆ Hunters, so every lion is definitely a hunter — III follows directly. Since lions are a (non-empty) subset of hunters, it also follows that some hunters are lions — II follows by conversion. I is too strong: not every hunter needs to be a lion.",
+    real=True)
+add("arith_reasoning", 2,
+    "What is the length of AC? Statement I: AB = 10 cm. Statement II: BC = 10 cm.",
+    "Neither statement alone, nor both together, are sufficient",
+    ["Statement I alone is sufficient", "Statement II alone is sufficient", "Both together are sufficient"],
+    "AC depends on the angle between AB and BC (or the exact positions of A, B, C), which neither statement gives — knowing both side lengths without the angle/arrangement still cannot fix AC's length.",
+    real=True)
 
 A = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -500,9 +541,17 @@ def gen_arith_reasoning(n):
             h = rng.randrange(1, 13); m = rng.choice([0, 30])
             angle = abs(30*h - 5.5*m)
             if angle > 180: angle = 360 - angle
+            used_vals = {round(angle, 6)}
+            distractors = []
+            for off in [15, -15, 30, -30, 45, 60, 90]:
+                val = abs(angle + off)
+                if val > 180: val = 360 - val
+                if round(val, 6) not in used_vals:
+                    used_vals.add(round(val, 6)); distractors.append(val)
+                if len(distractors) == 3: break
             add("arith_reasoning",3,
                 f"The angle between the hands of a clock at {h}:{m:02d} is:",
-                f"{angle:g}°", [f"{angle+15:g}°", f"{abs(angle-15):g}°", f"{angle+30:g}°", f"{angle/2:g}°"],
+                f"{angle:g}°", [f"{d:g}°" for d in distractors],
                 f"Principle: a clock's hour hand and minute hand each sweep the dial at their own constant speed (30° per hour, 5.5° per minute), so the angle between them at any exact time can be read straight off the formula |30×Hour − 5.5×Minute| — no need to visualise the clock face. "
                 f"Step 1: use the clock-angle formula: angle = |30×Hour − 5.5×Minute|. "
                 f"Step 2: substitute H={h}, M={m}: |30×{h} − 5.5×{m}| = |{30*h} − {5.5*m:g}|. "
@@ -597,6 +646,86 @@ CRITICAL = [
      "Step 2: controlled breathing is a proven way to physically calm the nervous system in the moment. "
      "Step 3: 'Take slow deep breaths and refocus on one question at a time' is correct — it treats the emotion first, then restores focus. "
      "Exam tip: in stress-management questions, look for the option combining a calming action with a narrow, practical next step — that combination signals genuine self-regulation."),
+    ("A team member consistently misses deadlines, affecting the whole group's work. As team leader, the best first step is to:",
+     "Talk to them privately to understand the cause and agree on a plan",
+     ["Publicly criticize their performance","Immediately remove them from the team","Cover their work yourself without saying anything"],
+     "Principle: leadership questions reward addressing root causes through direct, private communication before any punitive or self-sacrificing action. "
+     "Step 1: eliminate public criticism (damages trust) and silent covering (enables the problem to continue unaddressed). "
+     "Step 2: removing them immediately skips understanding whether the cause is fixable (workload, personal issue, unclear expectations). "
+     "Step 3: 'Talk to them privately to understand the cause and agree on a plan' is correct — it diagnoses before it acts. "
+     "Exam tip: 'understand first, act second' is the recurring pattern behind almost every correct leadership-scenario answer."),
+    ("You witness a colleague taking credit for your work in front of senior management. The most professional response is to:",
+     "Calmly clarify your contribution with facts, in an appropriate setting",
+     ["Publicly accuse them on the spot","Say nothing and resent them silently","Retaliate by taking credit for their work later"],
+     "Principle: professional-integrity questions favor calm, fact-based correction over public confrontation, silent resentment, or retaliation. "
+     "Step 1: eliminate the public accusation (unprofessional escalation) and retaliation (drags you down to the same level). "
+     "Step 2: silent resentment fixes nothing and lets the misrepresentation stand uncorrected. "
+     "Step 3: 'Calmly clarify your contribution with facts, in an appropriate setting' corrects the record without unnecessary conflict. "
+     "Exam tip: whenever an option pairs 'facts' with 'calm' and 'appropriate setting', it is almost always the intended answer."),
+    ("A citizen approaches you, visibly distressed and speaking in a language you don't fully understand. Your best first action is to:",
+     "Stay patient, use simple words or gestures, and seek a translator if needed",
+     ["Ignore them until someone else helps","Speak louder in your own language","Tell them to come back later"],
+     "Principle: public-service scenarios reward patience and practical accommodation over dismissal or unhelpful repetition. "
+     "Step 1: eliminate ignoring and 'come back later' — both abandon someone in visible distress. "
+     "Step 2: speaking louder in your own language doesn't solve a language barrier — it only adds frustration. "
+     "Step 3: 'Stay patient, use simple words or gestures, and seek a translator if needed' actively works toward understanding and helping. "
+     "Exam tip: for public-facing duty questions, the correct answer almost always involves patience plus a concrete next step, never dismissal."),
+    ("During a group project, two members strongly disagree on the approach, delaying progress. As a peer, you should:",
+     "Help them find common ground by focusing on the shared goal",
+     ["Take one side to end the debate quickly","Avoid the group until they resolve it","Report both of them to a supervisor immediately"],
+     "Principle: mediation-style questions reward facilitating agreement around a shared goal over picking sides, avoiding involvement, or escalating unnecessarily. "
+     "Step 1: eliminate taking sides (deepens the conflict) and avoidance (abandons the team when needed most). "
+     "Step 2: escalating to a supervisor immediately skips the reasonable step of trying peer-level resolution first. "
+     "Step 3: 'Help them find common ground by focusing on the shared goal' is correct — it resolves the conflict constructively. "
+     "Exam tip: for peer-conflict questions, look for the option that redirects both sides toward a shared objective."),
+    ("You made an honest mistake at work that caused a minor delay. The best response is to:",
+     "Report it immediately and propose a fix",
+     ["Hide it and hope no one notices","Blame a colleague for the delay","Wait for someone else to discover it"],
+     "Principle: accountability questions always reward immediate, honest disclosure paired with a solution over concealment or blame-shifting. "
+     "Step 1: eliminate hiding and blaming others — both are dishonest and damage trust further if discovered. "
+     "Step 2: waiting for discovery only delays the inevitable and looks worse than self-reporting. "
+     "Step 3: 'Report it immediately and propose a fix' shows both honesty and problem-solving, the ideal combination. "
+     "Exam tip: on integrity questions, the correct option always combines admitting the mistake with actively fixing it."),
+    ("A close friend asks you to bend a rule for them at work, which you know is against policy. You should:",
+     "Politely decline and explain that policy applies equally to everyone",
+     ["Bend the rule since they are a close friend","Report your friend to authorities immediately","Pretend you didn't hear the request"],
+     "Principle: ethics-under-pressure questions reward firm, respectful boundaries over favoritism, overreaction, or avoidance. "
+     "Step 1: eliminate bending the rule (compromises integrity) and ignoring the request (avoids the issue rather than resolving it). "
+     "Step 2: immediately reporting a friend for simply asking (without them actually violating anything) is a disproportionate reaction. "
+     "Step 3: 'Politely decline and explain that policy applies equally to everyone' upholds fairness without damaging the relationship unnecessarily. "
+     "Exam tip: look for the option that is firm on the rule but respectful in tone — that combination is the recurring correct pattern."),
+    ("While handling multiple urgent tasks at once, you start to feel overwhelmed. The most effective approach is to:",
+     "Prioritize tasks by urgency and importance, then tackle them one at a time",
+     ["Try to do everything simultaneously","Abandon all tasks until you feel calmer","Only do the easiest task first regardless of urgency"],
+     "Principle: time-management-under-pressure questions reward structured prioritization over multitasking, avoidance, or ignoring true urgency. "
+     "Step 1: eliminate doing everything simultaneously (leads to errors) and abandoning tasks (nothing gets done). "
+     "Step 2: doing only the easiest task ignores which tasks are actually most urgent or important. "
+     "Step 3: 'Prioritize tasks by urgency and importance, then tackle them one at a time' is correct — it restores control methodically. "
+     "Exam tip: whenever 'prioritize, then act one at a time' appears as an option, it is almost always the intended answer for overload scenarios."),
+    ("A junior colleague comes to you visibly upset after a public mistake. The most supportive response is to:",
+     "Reassure them privately and help them find a solution",
+     ["Point out the mistake again in front of others","Ignore their distress and move on","Tell them mistakes are unacceptable"],
+     "Principle: supportive-leadership questions reward private reassurance combined with practical help over public repetition of the error, dismissal, or harsh judgment. "
+     "Step 1: eliminate repeating the mistake publicly (adds to their distress) and dismissing their feelings (damages trust). "
+     "Step 2: declaring mistakes 'unacceptable' offers no path forward and increases anxiety rather than resolving it. "
+     "Step 3: 'Reassure them privately and help them find a solution' addresses both the emotional and practical sides of the situation. "
+     "Exam tip: correct EI answers almost always pair emotional reassurance with a concrete, constructive next step."),
+    ("You are asked to make a quick decision with incomplete information during an emergency. The best approach is to:",
+     "Use the best available information to act decisively, then adjust as more information comes in",
+     ["Wait indefinitely until you have complete information","Guess randomly without considering available facts","Refuse to decide and pass responsibility to someone else"],
+     "Principle: decision-making-under-uncertainty questions reward decisive action based on available facts, adaptable to new information, over paralysis, randomness, or shirking responsibility. "
+     "Step 1: eliminate waiting indefinitely (emergencies can't wait for perfect information) and refusing to decide (abandons responsibility). "
+     "Step 2: guessing randomly ignores the facts that ARE available, which is reckless. "
+     "Step 3: 'Use the best available information to act decisively, then adjust as more information comes in' balances speed with responsiveness. "
+     "Exam tip: in emergency-decision questions, the correct answer always combines acting NOW with staying open to correction later."),
+    ("During a discussion, a colleague from a different cultural background expresses an opinion that conflicts with your own beliefs. The best response is to:",
+     "Listen respectfully and seek to understand their perspective before responding",
+     ["Dismiss their opinion as wrong immediately","Mock their viewpoint in front of others","Avoid speaking with them from then on"],
+     "Principle: cultural-sensitivity questions reward respectful listening and genuine understanding over dismissal, ridicule, or avoidance. "
+     "Step 1: eliminate mocking (disrespectful and damaging) and avoidance (closes off future collaboration). "
+     "Step 2: dismissing the opinion immediately skips the step of trying to understand where it comes from. "
+     "Step 3: 'Listen respectfully and seek to understand their perspective before responding' reflects genuine open-mindedness. "
+     "Exam tip: for diversity/cultural questions, the correct answer nearly always starts with listening and understanding, never immediate rejection."),
 ]
 def gen_critical(n):
     for i in range(min(n, len(CRITICAL))):
@@ -619,10 +748,10 @@ def gen_memory(n):
             f"Exam tip: physically mark position numbers above each letter as you count rather than counting mentally — this eliminates the single most common error on this question type.")
 
 PLAN = [
-    (gen_analogies, 45), (gen_classification, 35), (gen_series, 50), (gen_coding, 50),
-    (gen_operations, 30), (gen_space, 20), (gen_venn, 20), (gen_inference, 40),
-    (gen_matching, 30), (gen_arith_reasoning, 45), (gen_problem_solving, 20),
-    (gen_critical, 5), (gen_memory, 10),
+    (gen_analogies, 68), (gen_classification, 53), (gen_series, 75), (gen_coding, 75),
+    (gen_operations, 45), (gen_space, 30), (gen_venn, 35), (gen_inference, 65),
+    (gen_matching, 45), (gen_arith_reasoning, 68), (gen_problem_solving, 35),
+    (gen_critical, 15), (gen_memory, 30),
 ]
 
 for fn, cnt in PLAN: fn(cnt)
@@ -633,15 +762,27 @@ for q in R:
     if q["q"] not in seen:
         seen.add(q["q"]); out.append(q)
 guard = 0
-TOPUP = [gen_series, gen_coding, gen_arith_reasoning, gen_matching, gen_space, gen_analogies, gen_operations]
-while len(out) < 400 and guard < 4000:
+TOPUP = [gen_series, gen_coding, gen_arith_reasoning, gen_matching, gen_space, gen_analogies, gen_operations, gen_memory, gen_venn, gen_inference, gen_problem_solving]
+# cap each topic's growth during top-up so a high-diversity generator can't
+# crowd out the others (same class of bug found & fixed in gen_bank_math.py)
+from collections import Counter
+topic_count = Counter(q["topic"] for q in out)
+PLAN_TARGET = {fn.__name__[4:]: cnt for fn, cnt in PLAN}
+topic_cap = {t: max(cnt * 2, 40) for t, cnt in PLAN_TARGET.items()}
+while len(out) < 600 and guard < 6000:
+    fn = rng.choice(TOPUP)
+    topic = fn.__name__[4:]
+    if topic_count.get(topic, 0) >= topic_cap.get(topic, 10**9):
+        guard += 1
+        continue
     before = len(R)
-    rng.choice(TOPUP)(1)
+    fn(1)
     for q in R[before:]:
         if q["q"] not in seen:
             seen.add(q["q"]); out.append(q)
+            topic_count[q["topic"]] = topic_count.get(q["topic"], 0) + 1
     guard += 1
-out = out[:400]
+out = out[:600]
 
 for i, q in enumerate(out): q["id"] = f"R{i+1:03d}"
 js = ",\n".join(json.dumps(r, ensure_ascii=False) for r in out)
