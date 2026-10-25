@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": "app",
+  "functions": {
+    "api/*.py": {
+      "maxDuration": 300,
+      "includeFiles": "docs/**",
+      "excludeFiles": "{app/**,tools/**,graphify-out/**,Syllabus*.pdf,__pycache__/**}"
+    }
+  }
+}
