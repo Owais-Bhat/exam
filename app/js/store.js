@@ -13,7 +13,9 @@
     daily: {},           // 'YYYY-MM-DD' -> answered count
     reported: [],        // question ids flagged bad
     startDate: null,     // first day of use (planner anchor)
-    settings: { theme: "dark" }
+    settings: { theme: "dark" },
+    masterclass: { completedDrills: {}, activeDay: 1, notesCache: {}, lessonCache: {} },
+    aiSettings: { provider: "auto", model: "", apiKey: "" }
   };
 
   let state = load();
@@ -23,7 +25,14 @@
       const raw = localStorage.getItem(KEY);
       if (!raw) return structuredClone(DEFAULT);
       const parsed = JSON.parse(raw);
-      return Object.assign(structuredClone(DEFAULT), parsed);
+      const merged = Object.assign(structuredClone(DEFAULT), parsed);
+      merged.profile = Object.assign(structuredClone(DEFAULT.profile), parsed.profile || {});
+      merged.settings = Object.assign(structuredClone(DEFAULT.settings), parsed.settings || {});
+      merged.masterclass = Object.assign(structuredClone(DEFAULT.masterclass), parsed.masterclass || {});
+      merged.masterclass.completedDrills = parsed.masterclass?.completedDrills || {};
+      merged.masterclass.lessonCache = parsed.masterclass?.lessonCache || {};
+      merged.aiSettings = Object.assign(structuredClone(DEFAULT.aiSettings), parsed.aiSettings || {});
+      return merged;
     } catch (e) {
       console.warn("store: reset after parse error", e);
       return structuredClone(DEFAULT);

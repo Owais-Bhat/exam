@@ -38,12 +38,12 @@
             <span class="chip">${"●".repeat(q.diff)}${"○".repeat(3 - q.diff)}</span>
             ${q.real ? '<span class="chip chip-amber">★ Asked in JKSSB 2022</span>' : ""}
           </div>
-          <p class="q-stem">${UI.esc(q.q)}</p>
+          <p class="q-stem">${UI.cleanText(q.q)}</p>
           <div id="opts">
             ${q.opts.map((o, k) => `
               <button class="opt" data-k="${k}">
                 <span class="opt-bubble">${"ABCD"[k]}</span>
-                <span>${UI.esc(o)}</span>
+                <span>${UI.cleanText(o)}</span>
               </button>`).join("")}
           </div>
           <div id="explain-slot"></div>
@@ -77,9 +77,15 @@
       }
 
       const lesson = (window.LESSONS || []).find(l => l.sec === q.sec && l.drill === q.topic);
+      const geminiPrompt = encodeURIComponent(`Please explain this JKSSB SI question step-by-step with shortcuts and examiner traps:\n"${q.q}"\nOptions: ${q.opts.join(", ")}\nCorrect Answer: ${"ABCD"[q.ans]} (${q.opts[q.ans]})\nExplanation: ${q.exp}`);
       root.querySelector("#explain-slot").innerHTML =
-        `<div class="explain"><b>${correct ? "Correct." : "Answer: " + "ABCD"[q.ans] + "."}</b> ${UI.esc(q.exp)}
-        ${lesson ? `<div style="margin-top:8px"><a class="btn btn-sm" href="#/lessons?id=${lesson.id}">📺 Watch: ${lesson.title}</a></div>` : ""}</div>`;
+        `<div class="explain">
+          <b>${correct ? "Correct." : "Answer: " + "ABCD"[q.ans] + "."}</b> ${UI.cleanText(q.exp)}
+          <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+            <a class="btn btn-sm btn-glow" href="#/ai-coach?prompt=${geminiPrompt}">🤖 Ask Gemini to explain trap</a>
+            ${lesson ? `<a class="btn btn-sm btn-ghost" href="#/lessons?id=${lesson.id}">📺 Watch Lesson: ${lesson.title}</a>` : ""}
+          </div>
+        </div>`;
 
       root.querySelector("#next-slot").innerHTML = `
         <button class="btn btn-sm btn-ghost" id="report-q" title="Flag a bad question — it will be excluded">Report question</button>

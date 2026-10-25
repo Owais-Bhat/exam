@@ -60,11 +60,11 @@
             <div class="mock-timer num" id="mock-timer">--:--:--</div>
           </div>
           <div class="card">
-            <p class="q-stem">${UI.esc(q.q)}</p>
+            <p class="q-stem">${UI.cleanText(q.q)}</p>
             <div id="opts">
               ${q.opts.map((o, k) => `
                 <button class="opt${L.answers[L.i] === k ? " sel" : ""}" data-k="${k}">
-                  <span class="opt-bubble">${"ABCD"[k]}</span><span>${UI.esc(o)}</span>
+                  <span class="opt-bubble">${"ABCD"[k]}</span><span>${UI.cleanText(o)}</span>
                 </button>`).join("")}
             </div>
             <div style="display:flex;gap:9px;margin-top:14px;flex-wrap:wrap">
@@ -198,12 +198,12 @@
               : `<span class="chip chip-neg num">−0.5</span>`;
             return `<div class="review-q">
               <div class="rq-head"><span class="num" style="color:var(--muted)">Q${i + 1} · ${q.id}</span> ${state} ${q.real ? '<span class="chip chip-amber">★ Asked in JKSSB 2022</span>' : ""}</div>
-              <p style="margin:6px 0 4px;font-weight:550">${UI.esc(q.q)}</p>
+              <p style="margin:6px 0 4px;font-weight:550">${UI.cleanText(q.q)}</p>
               <p style="font-size:.86rem;margin:0">
-                ${given !== null && !ok ? `<span style="color:var(--neg)">You: ${"ABCD"[given]}. ${UI.esc(q.opts[given])}</span><br>` : ""}
-                <span style="color:var(--key)">Answer: ${"ABCD"[q.ans]}. ${UI.esc(q.opts[q.ans])}</span>
+                ${given !== null && !ok ? `<span style="color:var(--neg)">You: ${"ABCD"[given]}. ${UI.cleanText(q.opts[given])}</span><br>` : ""}
+                <span style="color:var(--key)">Answer: ${"ABCD"[q.ans]}. ${UI.cleanText(q.opts[q.ans])}</span>
               </p>
-              <p style="font-size:.85rem;color:var(--muted);margin:5px 0 0">${UI.esc(q.exp)}</p>
+              <p style="font-size:.85rem;color:var(--muted);margin:5px 0 0">${UI.cleanText(q.exp)}</p>
             </div>`;
           }).join("")}
       </div>`;
