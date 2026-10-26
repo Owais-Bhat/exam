@@ -161,7 +161,11 @@
     return UI.esc(text)
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/`([^`]+)`/g, '<code class="textbook-inline-code">$1</code>')
-      .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+      // Render model-generated exponent notation as a real raised power.
+      // Supports both LaTeX-style 7^{105} and compact forms such as 7^2 or x^-1.
+      .replace(/\^\{([^{}]+)\}/g, "<sup>$1</sup>")
+      .replace(/\^([+-]?[A-Za-z0-9]+)/g, "<sup>$1</sup>");
   }
 
   function formatMarkdown(text) {
